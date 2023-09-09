@@ -8,20 +8,82 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="header">
-        <div class="container">
-            <nav>
-                <img src="images/logo.png" alt="logo">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Portfolio</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </nav>
+<!-- ------Main page------ -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" alt="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-text">
+            <p>Virginia Tech Student</p>
+            <h1>Hi, I'm <span>Ethan</span><br>Kemprowski from Virginia</h1>
         </div>
     </div>
+</div>
+<!-- -----about------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/rome.jpg">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>ABOUT ME: FILL THIS IN AT SOME POINT</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('employment')">Employment</p>
+                    <p class="tab-links" onclick="opentab('education')">Education</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Software Engineering</span><br>Java</li>
+                        <li><span>Software Engineering</span><br>Python</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="employment">
+                    <ul>
+                        <li><span>2021 - 2022</span><br>Bagger at Harris Teeter Supermarkets, Inc.</li>
+                        <li><span>2017 - 2022</span><br>Level 2 Referee at Reston Skatequest</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span>2022</span><br>High School Diploma from Freedom High School</li>
+                        <li><span>2022 - Current</span><br>Computer Science Major at Virginia Tech</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    <!-- Removes and adds line under about me tabs -->
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
 
 </body>
 </html>

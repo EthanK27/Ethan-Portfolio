@@ -9,6 +9,7 @@ body{
     color: #fff;
 
 }
+/* Background */
 #header{
     width: 100%;
     height: 100vh;
@@ -27,19 +28,119 @@ nav{
     flex-wrap: wrap;
 }
 
+/* Logo (EK) */
 .logo{
     width: 140px;
 
 }
 
+/* Tab buttons */
 nav ul li{
     display: inline-block;
     list-style: none;
     margin: 10px 20px;
 }
 
+/* Size and position of tab buttons */
 nav ul li a{
     color: #fff;
     text-decoration: none;
-    font-size: 19px;
+    font-size: 18px;
+    position: relative;
+}
+/* Little glow of tab buttons */
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #31f5ff;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+/* My name text */
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+/* My name text color */
+.header-text h1 span{
+    color: #31f5ff;
+}
+/* ------about------- */
+#about{
+    padding:80px 0;
+    color: #dadada;
+}
+/* Move text to right, image to left */
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+/* Image column - column width */
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+/* Text column */
+.about-col-2{
+    flex-basis: 60%;
+}
+/* About me info */
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Tabs in about me section */
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tab-links::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #31f5ff;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tab-links.active-link::after{
+    width: 50%;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #31b5ff;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
 }
